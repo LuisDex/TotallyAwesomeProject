@@ -1,0 +1,19 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #FDF1DC;
+    box-shadow: 0 0 1em #867453;
+}
+
+p {
+    font-family: 'Paprika', cursive;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px;
+    text-align: center;
+}
+
+.App-logo {
+    height: 40px;
+}
