@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "airdnd",
   "version": "1.0.0",
-  "description": "Mern Demo",
+  "description": "AirDnD - Welcome to our inn weary adventurer, if ya lookin for some new places to explore or new companions to explore with then head to the bulletin board!",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -21,6 +21,11 @@
   },
   "dependencies": {
     "express": "^4.16.3",
-    "if-env": "^1.0.4"
+    "express-session": "^1.16.1",
+    "if-env": "^1.0.4",
+    "mongodb": "^3.2.3",
+    "mongoose": "^5.5.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
   }
 }
