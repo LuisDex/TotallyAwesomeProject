@@ -2,6 +2,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
+    height: 60px;
     background: #FDF1DC;
     box-shadow: 0 0 1em #867453;
 }
