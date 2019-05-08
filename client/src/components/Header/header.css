@@ -1,10 +1,16 @@
-.nav {
+.navbar {
     position: sticky;
     width: 100%;
     background: #FDF1DC;
     box-shadow: 0 0 1em #867453;
 }
 
-.justify-content-end {
-    padding-right: 30px;
+.logo {
+    height: 55px;
+    width: auto;
+}
+
+.link {
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
 }

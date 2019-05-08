@@ -6,10 +6,9 @@
     box-shadow: 0 0 1em #867453;
 }
 
-p {
-    font-family: 'Paprika', cursive;
-    font-weight: bold;
-    font-size: 18px;
+.copyright {
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
     margin: 10px;
     text-align: center;
 }

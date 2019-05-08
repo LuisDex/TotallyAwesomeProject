@@ -1,27 +1,30 @@
 import React, { Component } from "react";
 import "./header.css";
+import Logo from "./d20.png";
 
 class Header extends Component {
     render() {
         return (
-            <nav>
-                <div>
-                    <ul className="nav justify-content-end">
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Link 1</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Find a Guild</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="/profile">Profile</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="/login">Sign In/Sign Up</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            <div>
+                <nav className="navbar navbar-expand-lg navbar-light">
+                    <a className="navbar-brand" href="/">
+                        <img className="logo" src={Logo} />
+                    </a>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarNav">
+                        <ul className="navbar-nav">
+                            <li className="nav-item">
+                                <a className="nav-link link" href="/profile">Profile</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link link" href="/findGuild">Find a Guild</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         );
     }
 }

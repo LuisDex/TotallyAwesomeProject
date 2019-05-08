@@ -1,0 +1,77 @@
+.map {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.capital {
+    position: absolute;
+    height: 8%;
+    width: auto;
+    top: 30%;
+    left: 32%;
+}
+
+.profile {
+    position: absolute;
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+    top: 25%;
+    left: 31%;
+}
+
+.castle {
+    position: absolute;
+    height: 8%;
+    width: auto;
+    top: 43%;
+    left: 69%;
+}
+
+.login {
+    position: absolute;
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+    top: 38%;
+    left: 68.5%;
+}
+
+.tower {
+    position: absolute;
+    height: 8%;
+    width: auto;
+    top: 53%;
+    left: 28%;
+}
+
+.register {
+    position: absolute;
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+    top: 47.5%;
+    left: 26.5%;
+}
+
+.guild {
+    position: absolute;
+    height: 8%;
+    width: auto;
+    top: 61%;
+    left: 81.5%;
+}
+
+.findGuild {
+    position: absolute;
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+    top: 56%;
+    left: 78.5%;
+}
+
+.title {
+    position: absolute;
+    font-size: 60px;
+    font-family: 'Pacifico', cursive;
+    top: 8%;
+    left: 50%;
+}

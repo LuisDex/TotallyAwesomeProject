@@ -1,11 +1,25 @@
 import React, { Component } from "react";
 import "./main.css";
+import Map from "./world_map.png";
+import Capital from "./capital.png";
+import Castle from "./castle.png";
+import Tower from "./tower.png";
+import Guild from "./guild.png";
 
 class Main extends Component {
     render() {
         return (
             <div>
-                This is where I put the main stuuf
+                <img className="map" src={Map} />
+                <a href="/profile"><img className="capital" src={Capital} /></a>
+                <div className="profile">Profile</div>
+                <a href="/login"><img className="castle" src={Castle} /></a>
+                <dic className="login">Login</dic>
+                <a href="/register"><img className="tower" src={Tower} /></a>
+                <div className="register">Register</div>
+                <a href="/results"><img className="guild" src={Guild} /></a>
+                <div className="findGuild">Find a Guild</div>
+                <div className="title">Welcome to AirDnD</div>
             </div>
         );
     }

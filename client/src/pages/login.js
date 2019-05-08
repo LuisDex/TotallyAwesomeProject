@@ -1,10 +1,16 @@
 import React, { Component } from "react";
-import Login from "./../components/Login"
+import Login from "./../components/Login";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 class LoginPage extends Component {
     render() {
         return (
-            <Login />
+            <div>
+                <Header />
+                <Login />
+                <Footer />
+            </div>
         );
     }
 }
