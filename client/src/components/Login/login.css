@@ -1,0 +1,13 @@
+.loginScroll {
+    position: relative;
+    padding-top: 5%;
+    padding-left: 25%;
+    height: 600px;
+    width: auto;
+}
+
+.form {
+    position: absolute;
+    top: 36%;
+    left: 40%;
+}

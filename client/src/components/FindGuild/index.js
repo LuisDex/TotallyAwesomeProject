@@ -11,4 +11,4 @@ class FindGuild extends Component {
     }
 }
 
-export default FindGuild;
+export default FindGuild
