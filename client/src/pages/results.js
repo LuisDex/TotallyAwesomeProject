@@ -1,12 +1,18 @@
 import React, { Component } from "react";
-import SignUp from "./../components/SignUp"
+import Results from "./../components/Results";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
-class Register extends Component {
+class ResultsPage extends Component {
     render() {
         return (
-            <SignUp />
+            <div>
+                <Header />
+                <Results />
+                <Footer />
+            </div>
         );
     }
 }
 
-export default Register;
+export default ResultsPage;

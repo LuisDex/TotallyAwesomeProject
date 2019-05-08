@@ -4,7 +4,7 @@ import logo from "./../../logo.svg"
 
 const Footer = () => (
     <footer className = "footer">
-        <p><img src={logo} className="App-logo" alt="logo" />© 2019 Copyright Team Smashington</p>
+        <p className="copyright"><img src={logo} className="App-logo" alt="logo" />© 2019 Copyright Team Smashington</p>
     </footer>
 );
 
