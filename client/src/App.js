@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MainPage from "./pages/main";
+import HomePage from "./pages/home";
 import LoginPage from "./pages/login";
 import Register from "./pages/signup";
 import ResultsPage from "./pages/results";
@@ -16,6 +17,7 @@ class App extends Component {
         <div>
           <Switch>
             <Route exact path="/" component={MainPage} />
+            <Route exactr path="/home" component={HomePage} />
             <Route exact path="/login" component= {LoginPage} />
             <Route exact path="/register" component= {Register} />
             <Route exact path="/results" component= {ResultsPage} />

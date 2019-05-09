@@ -1,3 +1,9 @@
+.background {
+    background-image: url("./table.jpg");
+    height: 100%;
+    width: 100%;
+}
+
 .loginScroll {
     position: relative;
     padding-top: 5%;
@@ -10,4 +16,20 @@
     position: absolute;
     top: 36%;
     left: 40%;
+}
+
+.input {
+    border: none;
+    border-bottom: 2px solid #000000;
+    background: transparent;
+}
+
+.register {
+    color: #d62027;
+}
+
+.loginSubmit {
+    background: #507568;
+    margin-top: 10px;
+    color: #ffffff;
 }

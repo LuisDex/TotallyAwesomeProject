@@ -15,11 +15,11 @@ class Main extends Component {
                 <div className="profile">Profile</div>
                 <a href="/login"><img className="castle" src={Castle} /></a>
                 <dic className="login">Login</dic>
-                <a href="/register"><img className="tower" src={Tower} /></a>
-                <div className="register">Register</div>
+                <a href="/home"><img className="tower" src={Tower} /></a>
+                <div className="home">Home</div>
                 <a href="/results"><img className="guild" src={Guild} /></a>
                 <div className="findGuild">Find a Guild</div>
-                <div className="title">Welcome to AirDnD</div>
+                <div className="title">Welcome to AirD&amp;D</div>
             </div>
         );
     }
