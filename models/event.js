@@ -6,7 +6,13 @@ const events_Schema = new Schema({
   venue:{type:String, required:true},
   game:{type:String, required:true},
   date:Date,
-  time:Number
+  time:Number,
+  creator:[
+           {
+            userID:"",
+            storeID:""  
+           }
+          ]
 });
 
 const Event = mongoose.model("Event", events_Schema);
