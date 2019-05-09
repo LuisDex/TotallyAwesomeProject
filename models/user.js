@@ -7,7 +7,14 @@ const user_Schema = new Schema({
   password: {type:String, required:true, unique:true},
   name:String,
   games:Array,
-  userCreated: {type: Date, default: Date.now}
+  is_Store: {type: Boolean, default: false},
+  userCreated: {type: Date, default: Date.now},
+  events: [
+    {
+     type:Schema.Types.ObjectId,
+     ref:"Event"
+    }
+   ]
 });
 
 const User = mongoose.model("User", user_Schema);

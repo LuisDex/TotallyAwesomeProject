@@ -6,8 +6,15 @@ const storesSchema = new Schema({
   email: { type: String, unique: true, match: [/.+@.+\..+/, "Please enter a valid e-mail address"]},
   password: {type:String, required:true, unique:true},
   location: { type: String, required: true },
+  is_Store: {type: Boolean, default: true},
   webpage: String,
-  games:Array
+  games:Array,
+  events: [
+           {
+            type:Schema.Types.ObjectId,
+            ref:"Event"
+           }
+          ]
 });
 
 const Store = mongoose.model("Store", storesSchema);

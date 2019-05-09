@@ -1,6 +1,6 @@
 // This is middleware for restricting routes a user is not allowed to visit if not logged in
 module.exports = function(req, res, next) {
-    const specialURLs = ["/login", "/register", "/api/login", "/api/signup"];
+    const specialURLs = ["/login", "/register", "/", "/home","/api/login", "/api/signup"];
     const url = req.originalUrl;
     // If the user is logged in, continue with the request to the restricted route
     if (req.user) {
@@ -11,7 +11,7 @@ module.exports = function(req, res, next) {
     }
   
     if (specialURLs.indexOf(url) === -1) {
-      // If the user isn't logged in, redirect them to the login page
+      // If the user isn't logged in, redirect them to the main page
     return res.redirect("/login");
     }
   
