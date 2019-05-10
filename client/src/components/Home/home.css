@@ -20,6 +20,28 @@
     font-size: 80px;
     top: 40%;
     left: 15%;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    border-bottom: crimson 5px solid;
+  }
+
+  .wumboText {
+    position: absolute;
+    font-family: 'Francois One', sans-serif;
+    color: #ffffff;
+    font-size: 40px;
+    top: 55%;
+    left: 30%;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
+  }
+
+  .wumboButton {
+    position: absolute;
+    font-family: 'Francois One', sans-serif;
+    top: 62%;
+    left: 45%;
+    background: #507568;
+    margin-top: 10px;
+    color: #ffffff;
   }

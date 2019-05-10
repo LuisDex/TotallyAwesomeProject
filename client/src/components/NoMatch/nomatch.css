@@ -1,0 +1,30 @@
+.bigContainer {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  .wrapper {
+    padding-bottom: 60px;
+  }
+
+  .orc {
+    position: absolute;
+    bottom: 60px;
+    left: 40%;
+  }
+
+  .tavern {
+    position: absolute;
+    top: 60px;
+    left: 30%;
+    width: 40%;
+    height: auto;
+  }
+
+  .fourOhFour {
+    position: absolute;
+    font-family: 'Francois One', sans-serif;
+    font-size: 40px;
+    top: 50%;
+    left: 70%;
+  }
