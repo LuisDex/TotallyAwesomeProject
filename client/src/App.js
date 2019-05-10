@@ -7,7 +7,7 @@ import Register from "./pages/signup";
 import ResultsPage from "./pages/results";
 import ProfilePage from "./pages/profile";
 import FindGuildPage from "./pages/findGuild";
-import FindStorePage from "./pages/findStore";
+// import FindStorePage from "./pages/findStore";
 import NoMatchPage from "./pages/nomatch";
 
 
@@ -24,7 +24,7 @@ class App extends Component {
             <Route exact path="/results" component= {ResultsPage} />
             <Route exact path="/profile" component= {ProfilePage} />
             <Route exact path="/findGuild" component= {FindGuildPage} />
-            <Route exact path="/findStore" component= {FindStorePage} />
+            {/* <Route exact path="/findStore" component= {FindStorePage} /> */}
             <Route component= {NoMatchPage} />
           </Switch>
         </div>

@@ -1,0 +1,25 @@
+.bigContainer {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  .wrapper {
+    padding-bottom: 60px;
+  }
+
+  .wumbotron {
+      position: absolute;
+      width: 100%;
+      height: auto;
+  }
+
+  .wumboTitle {
+    position: absolute;
+    font-family: 'Francois One', sans-serif;
+    color: #ffffff;
+    font-size: 80px;
+    top: 40%;
+    left: 15%;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+  }
