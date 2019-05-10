@@ -1,0 +1,49 @@
+.bigContainer {
+    position: relative;
+    min-height: 100vh;
+}
+
+.wrapper {
+    padding-bottom: 60px;
+}
+
+.registerBackground{
+    background-image: url("./table.jpg");
+    height: 100vh;
+    width: 100%;
+}
+
+.registerForm {
+    position: absolute;
+    top: 26%;
+    left: 40%;
+}
+
+.topScroll {
+    position: absolute;
+    top: 17%;
+    left: 31%;
+}
+
+.midScroll {
+    position: absolute;
+    top: 38%;
+    left: 31%;
+}
+
+.bottomScroll {
+    position: absolute;
+    top: 59%;
+    left: 31%;
+}
+
+.table {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.registerTitle {
+    font-size: 30px;
+    padding-bottom: 10px;
+}
