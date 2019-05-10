@@ -13,13 +13,13 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.use(
-  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+  session({ secret: "keyboard cat", resave: false, saveUninitialized: false })
 );
 app.use(passport.initialize());
 app.use(passport.session());
 
-var isAuthenticated = require("./config/middleware/isAuthenticated");
-app.use(isAuthenticated);
+// var isAuthenticated = require("./config/middleware/isAuthenticated");
+// app.use(isAuthenticated);
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
