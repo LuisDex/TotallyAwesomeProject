@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import "./signup.css";
+import Header from "../Header";
+import Footer from "../Footer";
+import topScroll from "./scrollTop.png";
+import midScroll from "./scrollMid.png";
+import bottomScroll from "./scrollBottom.png";
+// import Table from "./table.jpg";
 
 class SignUp extends Component {
 
@@ -29,7 +35,7 @@ class SignUp extends Component {
         //request to server to add a new username/password
         axios.post('/api/user', {
             username: this.state.username,
-            email:this.state.email,
+            email: this.state.email,
             password: this.state.password
         })
             .then(response => {
@@ -51,25 +57,44 @@ class SignUp extends Component {
 
     render() {
         return (
-            <div className="background">
-                {/* <img className="loginScroll" src={Scroll} alt="scroll" /> */}
-                <div className="form">
-                    <form>
-                        <div className="form-group">
-                            <label htmlFor="email">Email Address</label>
-                            <input type="email" className="form-control email input" placeholder="What is your email?" name="email" value={this.state.email} onChange={this.handleChange}></input>
+            <div className="bigContainer">
+                <Header />
+                <div className="wrapper">
+                    <div className="registerBackground">
+                        <img className="topScroll" src={topScroll} />
+                        <img className="midScroll" src={midScroll} />
+                        <img className="bottomScroll" src={bottomScroll} />
+                        <div className="registerForm">
+                            <h1 className="registerTitle">Register for a Guild</h1>
+                            <form>
+                                <div className="form-group">
+                                    <label htmlFor="email">Email Address</label>
+                                    <input type="email" className="form-control email input" placeholder="What is your email?" name="email" value={this.state.email} onChange={this.handleChange}></input>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="password">Password</label>
+                                    <input type="password" className="form-control password input" placeholder="What's the password?" name="password" value={this.state.password} onChange={this.handleChange}></input>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="username">Username</label>
+                                    <input type="text" className="form-control username input" placeholder="And be clever" name="username" value={this.state.username} onChange={this.handleChange}></input>
+                                </div>
+                                <div className="form-group">
+                                    <label className="container">I am a User
+                                        <input type="checkbox" />
+                                        <span className="checkmark"></span>
+                                    </label>
+                                    <label className="container">I am a Store
+                                        <input type="checkbox" />
+                                        <span className="checkmark"></span>
+                                    </label>
+                                </div>
+                                <button type="submit" className="btn loginSubmit" onClick={this.handleSubmit} >Submit</button>
+                            </form>
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="password">Password</label>
-                            <input type="password" className="form-control password input" placeholder="What's the password?" name="password" value={this.state.password} onChange={this.handleChange}></input>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="username">Username</label>
-                            <input type="text" className="form-control username input" placeholder="And be clever" name="username" value={this.state.username} onChange={this.handleChange}></input>
-                        </div>
-                        <button type="submit" className="btn loginSubmit" onClick={this.handleSubmit} >Submit</button>
-                    </form>
+                    </div>
                 </div>
+                <Footer />
             </div>
         );
     }

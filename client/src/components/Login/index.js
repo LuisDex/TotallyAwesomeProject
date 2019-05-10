@@ -10,8 +10,8 @@ class Login extends Component {
     render() {
         return (
             <div className="bigContainer">
+            <Header />
                 <div className="wrapper">
-                    <Header />
                     <div className="background">
                         <img className="loginScroll" src={Scroll} alt="scroll" />
                         <div className="form">
@@ -29,8 +29,8 @@ class Login extends Component {
                             </form>
                         </div>
                     </div>
-                    <Footer />
                 </div>
+                <Footer />
             </div>
         );
     }
