@@ -7,11 +7,13 @@ passport.use(
   new LocalStrategy(
     // Our user will sign in using an email, rather than a "username"
     {
-      usernameField: "email"
+      usernameField: "email",
+      passwordField: "password"
     },
     function(user, password, done) {
       // When a user tries to sign in this code runs
       var criteria = user.indexOf("@") === -1 ? { username: user } : { email: user };
+      // var criteria = { email: user };
       db.User.findOne({
         where: criteria
       }).then(function(dbUser) {
