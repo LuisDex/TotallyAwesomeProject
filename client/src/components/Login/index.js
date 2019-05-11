@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import "./login.css";
+import Header from "../Header";
+import Footer from "../Footer";
 import Scroll from "./scroll.png";
 
 class Login extends Component {
@@ -53,18 +55,15 @@ class Login extends Component {
                 
             })
     }
-
-    render() 
-       {
-        if (this.state.redirectTo) 
-        {
-         return <Redirect to={{ pathname: this.state.redirectTo }} />
-        } else { 
-            return (
-            <div className="background">
-                <img className="loginScroll" src={Scroll} alt="scroll" />
-                <div className="form">
-                    <form>
+    render() {
+        return (
+            <div className="bigContainer">
+            <Header />
+                <div className="wrapper">
+                    <div className="background">
+                        <img className="loginScroll" src={Scroll} alt="scroll" />
+                        <div className="form">
+                       <form>
                         <div className="form-group">
                             <label htmlFor="email"><i className="fas fa-dice-d20"></i>  Email Address</label>
                             <input type="email" className="form-control email input" placeholder="What is your email?" name="email" value={this.state.email} onChange={this.handleChange}></input>
@@ -76,7 +75,10 @@ class Login extends Component {
                         <a className="register" href="/register">Not a member? Click here!</a><br />
                         <button type="submit" className="btn loginSubmit" onClick={this.handleSubmit}>Submit</button>
                     </form>
+                        </div>
+                    </div>
                 </div>
+                <Footer />
             </div>
         );
        }

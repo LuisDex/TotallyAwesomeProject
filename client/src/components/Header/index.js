@@ -7,7 +7,7 @@ class Header extends Component {
         return (
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light">
-                    <a className="navbar-brand" href="/">
+                    <a className="navbar-brand" href="/home">
                         <img className="logo" src={Logo} />
                     </a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,6 +20,9 @@ class Header extends Component {
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link link" href="/findGuild">Find a Guild</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link link" href="/login">Login</a>
                             </li>
                         </ul>
                     </div>
