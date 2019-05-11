@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import "./signup.css";
 import Header from "../Header";
@@ -17,6 +18,7 @@ class SignUp extends Component {
             password: '',
             username: '',
             confirmPassword: '',
+            redirectTo: null
 
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -43,7 +45,7 @@ class SignUp extends Component {
                 if (!response.data.errmsg) {
                     console.log('successful signup')
                     this.setState({ //redirect to login page
-                        redirectTo: '/login'
+                        redirectTo: '/findGuildUser'
                     })
                 } else {
                     console.log('username already taken')
@@ -56,6 +58,9 @@ class SignUp extends Component {
     }
 
     render() {
+        if (this.state.redirectTo) {
+            return <Redirect to={{ pathname: this.state.redirectTo }} />
+        } else {
         return (
             <div className="bigContainer">
                 <Header />
@@ -97,6 +102,7 @@ class SignUp extends Component {
                 <Footer />
             </div>
         );
+    }
     }
 }
 
