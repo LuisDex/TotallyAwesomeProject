@@ -5,27 +5,83 @@ import "./login.css";
 import Scroll from "./scroll.png";
 
 class Login extends Component {
-    render() {
-        return (
+
+    constructor() {
+        super()
+        this.state = {
+            email: '',
+            password: '',
+            redirectTo: null
+        }
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+  
+    }
+
+    handleChange(event) {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    handleSubmit(event) {
+        event.preventDefault()
+        console.log('handleSubmit')
+        console.log(this.state.email);
+        axios
+            .post('/api/login', {
+                email: this.state.email,
+                password: this.state.password
+            })
+            .then(response => {
+                console.log('login response: ')
+                console.log(response)
+                if (response.status === 200) {
+                    // update App.js state
+                    this.props.updateUser({
+                        loggedIn: true,
+                        email: response.data.email
+                    })
+                    // update the state to redirect to home
+                    this.setState({
+                        redirectTo: '/'
+                    })
+                }
+            }).catch(error => {
+                console.log('login error: ')
+                console.log(error);
+                
+            })
+    }
+
+    render() 
+       {
+        if (this.state.redirectTo) 
+        {
+         return <Redirect to={{ pathname: this.state.redirectTo }} />
+        } else { 
+            return (
             <div className="background">
                 <img className="loginScroll" src={Scroll} alt="scroll" />
                 <div className="form">
                     <form>
                         <div className="form-group">
-                            <label for="email"><i class="fas fa-dice-d20"></i>  Email Address</label>
-                            <input type="email" className="form-control email input" placeholder="What is your email?"></input>
+                            <label htmlFor="email"><i className="fas fa-dice-d20"></i>  Email Address</label>
+                            <input type="email" className="form-control email input" placeholder="What is your email?" name="email" value={this.state.email} onChange={this.handleChange}></input>
                         </div>
                         <div className="form-group">
-                            <label for="password"><i class="fa fa-lock"></i>  Password</label>
-                            <input type="password" className="form-control password input" placeholder="What's the password?"></input>
+                            <label htmlFor="password"><i className="fa fa-lock"></i>  Password</label>
+                            <input type="password" className="form-control password input" placeholder="What's the password?"  name="password" value={this.state.password} onChange={this.handleChange}></input>
                         </div>
                         <a className="register" href="/register">Not a member? Click here!</a><br />
-                        <button type="submit" class="btn loginSubmit">Submit</button>
+                        <button type="submit" className="btn loginSubmit" onClick={this.handleSubmit}>Submit</button>
                     </form>
                 </div>
             </div>
         );
+       }
     }
+
 }
 
 export default Login;
