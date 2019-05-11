@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import "./findGuild.css";
+import topScroll from "./scrollTop.png";
+import midScroll from "./scrollMid.png";
+import bottomScroll from "./scrollBottom.png";
 import Header from "../Header";
 import Footer from "../Footer";
 
@@ -56,6 +59,9 @@ class FindGuild extends Component {
             <div className="bigContainer">
                 <Header />
                 <div className="wrapper">
+                    <img className="topScrollGuild" src={topScroll} />
+                    <img className="midScrollGuild" src={midScroll} />
+                    <img className="bottomScrollGuild" src={bottomScroll} />
                     <div className="registerBackground">
                         <div className="findGuildForm">
                             <h1 className="findGuildTitle">Find a Guild</h1>
