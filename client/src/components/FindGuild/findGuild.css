@@ -1,8 +1,26 @@
 .bigContainer {
-    position: relative;
-    min-height: 100vh;
-  }
+  position: relative;
+  min-height: 100vh;
+}
 
-  .wrapper {
-    padding-bottom: 60px;
-  }
+.wrapper {
+  padding-bottom: 60px;
+}
+
+.topScrollGuild {
+  position: absolute;
+  top: 17%;
+  left: 31%;
+}
+
+.midScrollGuild {
+  position: absolute;
+  top: 38%;
+  left: 31%;
+}
+
+.bottomScrollGuild {
+  position: absolute;
+  top: 59%;
+  left: 31%;
+}
