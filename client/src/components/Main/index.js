@@ -17,7 +17,7 @@ class Main extends Component {
                 <dic className="login">Login</dic>
                 <a href="/home"><img className="tower" src={Tower} /></a>
                 <div className="home">Home</div>
-                <a href="/results"><img className="guild" src={Guild} /></a>
+                <a href="/findGuildUser"><img className="guild" src={Guild} /></a>
                 <div className="findGuild">Find a Guild</div>
                 <div className="title">Welcome to AirD&amp;D</div>
             </div>
