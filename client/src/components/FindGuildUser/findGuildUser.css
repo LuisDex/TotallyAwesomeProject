@@ -1,0 +1,42 @@
+.bigContainer {
+  position: relative;
+  min-height: 100vh;
+}
+
+.wrapper {
+  padding-bottom: 60px;
+}
+
+.findGuildFormUser {
+  position: absolute;
+  top: 21%;
+  left: 38%;
+}
+
+.topScrollGuildUser {
+  position: absolute;
+  width: 600px;
+  top: 10%;
+  left: 28%;
+}
+
+.midScrollGuildUser {
+  position: absolute;
+  width: 600px;
+  top: 34.6%;
+  left: 28%;
+}
+
+.midScrollGuildUserJr {
+  position: absolute;
+  width: 600px;
+  top: 58%;
+  left: 28%;
+}
+
+.bottomScrollGuildUser {
+  position: absolute;
+  width: 600px;
+  top: 68%;
+  left: 28%;
+}

@@ -1,0 +1,42 @@
+.bigContainer {
+  position: relative;
+  min-height: 100vh;
+}
+
+.wrapper {
+  padding-bottom: 60px;
+}
+
+.findGuildFormStore {
+  position: absolute;
+  top: 17%;
+  left: 38%;
+}
+
+.topScrollGuildStore {
+  position: absolute;
+  width: 600px;
+  top: 10%;
+  left: 28%;
+}
+
+.midScrollGuildStore {
+  position: absolute;
+  width: 600px;
+  top: 34.6%;
+  left: 28%;
+}
+
+.midScrollGuildStoreJr {
+  position: absolute;
+  width: 600px;
+  top: 58%;
+  left: 28%;
+}
+
+.bottomScrollGuildStore {
+  position: absolute;
+  width: 600px;
+  top: 68%;
+  left: 28%;
+}
