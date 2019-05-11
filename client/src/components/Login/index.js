@@ -40,13 +40,15 @@ class Login extends Component {
                 console.log(response)
                 if (response.status === 200) {
                     // update App.js state
-                    this.props.updateUser({
-                        loggedIn: true,
-                        email: response.data.email
-                    })
+                    // this.props.updateUser({
+                    //     loggedIn: true,
+                    //     email: response.data.email
+                    // })
+                    console.log("Logged in");
+                    
                     // update the state to redirect to home
                     this.setState({
-                        redirectTo: '/'
+                        redirectTo: '/home'
                     })
                 }
             }).catch(error => {
@@ -56,6 +58,9 @@ class Login extends Component {
             })
     }
     render() {
+        if (this.state.redirectTo) {
+            return <Redirect to={{ pathname: this.state.redirectTo }} />
+        } else {
         return (
             <div className="bigContainer">
             <Header />
@@ -81,9 +86,8 @@ class Login extends Component {
                 <Footer />
             </div>
         );
+    }
        }
     }
-
-}
 
 export default Login;
