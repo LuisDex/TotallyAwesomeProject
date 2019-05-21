@@ -10,16 +10,18 @@ passport.use(
     },
     function(username, password, done) {
       db.User.findOne({ email: username }, (err, user) => {
-        if (err) {
-          return done(err)
+
+        if (!err && user && user.checkPassword(password)) {
+          return done(null, user);
         }
-        if (!user) {
-          return done(null, false, { message: 'Incorrect username' })
-        }
-        if (!user.checkPassword(password)) {
-          return done(null, false, { message: 'Incorrect password' })
-        }
-        return done(null, user)
+
+        db.Store.findOne({email:username}, (err,user) => {
+          if (!err && user && user.checkPassword(password)) {
+            return done(null, user);
+          }
+
+          done(new Error("Invalid Username or Password. No user found"));
+        })
       })
     }
     // // Our user will sign in using an email, rather than a "username"
