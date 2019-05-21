@@ -18,9 +18,11 @@ router.route("/login").post(
    passport.authenticate('local'),
    function (req, res) {
        console.log('logged in', req.user);
+   
        var userInfo = {
            email: req.user.email
        };
+   
        res.send(userInfo);
    }
  )

@@ -5,7 +5,6 @@ var db = require("../models");
 // Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
 passport.use(
   new LocalStrategy(
-
     {
       usernameField: 'email' // not necessary, DEFAULT
     },
@@ -60,7 +59,7 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(id, done) {
-  User.findById(id, function (err, user) {
+  db.User.findById(id, function (err, user) {
      done(err, user);
   });
 });
