@@ -32,6 +32,7 @@ class Login extends Component {
         event.preventDefault()
         console.log('handleSubmit')
         console.log(this.state.email);
+        sessionStorage.setItem("testing","test this");
         axios
             .post('/api/login', {
                 email: this.state.email,
