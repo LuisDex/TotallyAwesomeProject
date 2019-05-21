@@ -6,6 +6,8 @@ import Header from "../Header";
 import Footer from "../Footer";
 import Scroll from "./scroll.png";
 
+
+
 class Login extends Component {
 
     constructor() {
@@ -17,7 +19,7 @@ class Login extends Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
-  
+        
     }
 
     handleChange(event) {
@@ -36,21 +38,23 @@ class Login extends Component {
                 password: this.state.password
             })
             .then(response => {
-                console.log('login response: ')
-                console.log(response)
-                if (response.status === 200) {
-                    // update App.js state
-                    // this.props.updateUser({
-                    //     loggedIn: true,
-                    //     email: response.data.email
-                    // })
+                if (response.status === 200) 
+                {
+                    console.log(response.data);
+                    sessionStorage.setItem("loggedIn","true");
+                    sessionStorage.setItem("loggedAs",response.data.email);
+                    
+                    console.log(response.data.is_Store);
                     console.log("Logged in");
+                    console.log("Logged in as: " + sessionStorage.getItem("loggedAs"));
+                 
                     
                     // update the state to redirect to home
                     this.setState({
                         redirectTo: '/home'
                     })
                 }
+                
             }).catch(error => {
                 console.log('login error: ')
                 console.log(error);

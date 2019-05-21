@@ -1,6 +1,6 @@
 const db = require("../models");
 
-// Defining methods for the userController
+// Defining methods for the storeController
 module.exports = {
   findAll: function(req, res) {
     db.Store
@@ -17,7 +17,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-    db.Book
+    db.Store
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -30,7 +30,7 @@ module.exports = {
   },
   update: function(req, res) {
     db.Store
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findOneAndUpdate({ email: req.params.email }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

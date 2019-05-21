@@ -8,7 +8,9 @@ const user_Schema = new Schema({
   password: {type:String, required:true, unique:true},
   name:String,
   games:Array,
-  is_Store: {type: Boolean, default: false},
+  host:Boolean,
+  location:String,
+  is_Store: {type:String, default: "no"},
   userCreated: {type: Date, default: Date.now},
   events: [
     {

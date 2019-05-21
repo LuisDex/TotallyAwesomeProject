@@ -8,15 +8,16 @@ router.route("/")
   .post(userController.create);
 
 // Matches with "/api/user/:id"
-router
-  .route("/:id")
-  .get(userController.findById)
-  .put(userController.update)
-  .delete(userController.remove);
+// router
+//   .route("/:id")
+//   .get(userController.findById)
+//   .put(userController.update)
+//   .delete(userController.remove);
 
-// Matches with "/api/user/:username"
-router.route("/:username")
-.get(userController.findOne);
+// Matches with "/api/user/:email"
+router.route("/:email")
+.get(userController.findOne)
+.put(userController.update);
 
 // router.route("/login").post(
 //    function (req, res, next) {

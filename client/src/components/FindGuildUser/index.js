@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import "./findGuildUser.css";
 import topScroll from "./scrollTop.png";
@@ -7,18 +8,17 @@ import midScrollJr from "./scrollMidJr.png";
 import bottomScroll from "./scrollBottom.png";
 import Header from "../Header";
 import Footer from "../Footer";
+import $ from "jquery";
 
 class FindGuildUser extends Component {
 
     constructor() {
         super()
         this.state = {
-            email: '',
-            password: '',
-            username: '',
-            confirmPassword: '',
-
+            location: '',
+            redirectTo:null
         }
+        
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
     }
@@ -31,31 +31,44 @@ class FindGuildUser extends Component {
 
     handleSubmit(event) {
         event.preventDefault()
+        var games = [];
+        if($("#hosting").is(":checked"))
+        {
+          var hosting = true;
+        } else if($("#notHosting").is(":checked"))
+        {
+          var hosting = false;
+        }
 
-        //request to server to add a new username/password
-        axios.post('/api/user', {
-            username: this.state.username,
-            email: this.state.email,
-            password: this.state.password
+        $.each($("input[name='game']:checked"), function(){            
+            games.push($(this).val());
+        });
+        console.log(games);
+
+        axios.put('api/user/' + sessionStorage.getItem("loggedAs"), {
+          games:games,
+          host:hosting,
+          location:this.state.location
         })
             .then(response => {
                 console.log(response)
                 if (!response.data.errmsg) {
-                    console.log('successful signup')
+                    console.log('Update Successful')
                     this.setState({ //redirect to login page
-                        redirectTo: '/login'
+                        redirectTo: '/profile'
                     })
-                } else {
-                    console.log('username already taken')
                 }
             }).catch(error => {
-                console.log('signup error: ')
+                console.log('Error Updating')
                 console.log(error)
 
             })
     }
 
     render() {
+        if (this.state.redirectTo) {
+            return <Redirect to={{ pathname: this.state.redirectTo }} />
+        } else {
         return (
             <div className="bigContainer">
                 <Header />
@@ -70,49 +83,50 @@ class FindGuildUser extends Component {
                             <form>
                                 <div className="form-group">
                                     <label htmlFor="input">Location (Zip Code)</label>
-                                    <input type="email" className="form-control email input" placeholder="Zip" name="email" value={this.state.email} onChange={this.handleChange}></input>
+                                    <input type="text" className="form-control zip input" placeholder="Zip" name="location" value={this.state.location} onChange={this.handleChange}></input>
                                 </div>
                                 <div className="form-group">
                                 <p className="games">What games do you play?</p>
                                 <label className="container">D&amp;D
-                                    <input type="checkbox" />
+                                    <input type="checkbox" value = "DnD" name = "game"/>
                                     <span className="checkmark"></span>
                                 </label>
                                 <label className="container">Pathfinder
-                                    <input type="checkbox" />
+                                    <input type="checkbox" value = "Pathfinder" name = "game"/>
                                     <span className="checkmark"></span>
                                 </label>
-                                <label className="container">Pokemon
-                                    <input type="checkbox" />
+                                <label className="container">Pokemon CCG
+                                    <input type="checkbox" value = "Pokemon CCG" name = "game"/>
                                     <span className="checkmark"></span>
                                 </label>
                                 <label className="container">Magic the Gathering
-                                    <input type="checkbox" />
+                                    <input type="checkbox" value = "Magic the Gathering" name = "game"/>
                                     <span className="checkmark"></span>
                                 </label>
                                 <label className="container">Yu-Gi-Oh
-                                    <input type="checkbox" />
+                                    <input type="checkbox" value = "Yu-Gi-Oh" name = "game"/>
                                     <span className="checkmark"></span>
                                 </label>
                                 <label className="container">Board Games
-                                    <input type="checkbox" />
+                                    <input type="checkbox" value = "Board Games" name = "game"/>
                                     <span className="checkmark"></span>
                                 </label>
                                 <label className="container">Minis
-                                    <input type="checkbox" />
+                                    <input type="checkbox" value = "Miniature Games" name = "game" />
                                     <span className="checkmark"></span>
                                 </label>
                                 </div>
                                 <div className="form-group">
                                     <p className="host">Are you willing to host games?</p>
-                                    <label className="container">Yes
-                                    <input type="checkbox" />
-                                    <span className="checkmark"></span>
-                                </label>
-                                <label className="container">No
-                                    <input type="checkbox" />
-                                    <span className="checkmark"></span>
-                                </label>
+
+                                    <div className="custom-control custom-radio">
+                                        <input type="radio" id="hosting" name="customRadio" className="custom-control-input"/>
+                                        <label className="custom-control-label" htmlFor="hosting">Yes</label>
+                                    </div>
+                                    <div className="custom-control custom-radio">
+                                        <input type="radio" id="notHosting" name="customRadio" className="custom-control-input"/>
+                                        <label className="custom-control-label" htmlFor="notHosting">No</label>
+                                    </div>
                                 </div>
                                 <button type="submit" className="btn loginSubmit" onClick={this.handleSubmit} >Submit</button>
                             </form>
@@ -123,6 +137,7 @@ class FindGuildUser extends Component {
             </div>
         );
     }
+}
 }
 
 export default FindGuildUser
