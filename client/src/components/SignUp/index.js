@@ -84,15 +84,12 @@ class SignUp extends Component {
                                     <label htmlFor="username">Username</label>
                                     <input type="text" className="form-control username input" placeholder="And be clever" name="username" value={this.state.username} onChange={this.handleChange}></input>
                                 </div>
-                                <div className="form-group">
-                                    <label className="container">I am a User
-                                        <input type="checkbox" />
-                                        <span className="checkmark"></span>
-                                    </label>
-                                    <label className="container">I am a Store
-                                        <input type="checkbox" />
-                                        <span className="checkmark"></span>
-                                    </label>
+                                <div className="form-check">
+                                    <input className="form-check-input" type="radio" value="user" checked />
+                                    <label className="form-check-label" for="user">I am a User</label>
+                                    <br />
+                                    <input className="form-check-input" type="radio" value="store" />
+                                    <label className="form-check-label" for="store">I am a Store</label>
                                 </div>
                                 <button type="submit" className="btn loginSubmit" onClick={this.handleSubmit} >Submit</button>
                             </form>

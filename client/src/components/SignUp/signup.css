@@ -21,20 +21,26 @@
 
 .topScroll {
     position: absolute;
-    top: 17%;
-    left: 31%;
+    height: auto;
+    width: 600px;
+    top: 100px;
+    left: 400px;
 }
 
 .midScroll {
     position: absolute;
-    top: 38%;
-    left: 31%;
+    height: auto;
+    width: 600px;
+    top: 330px;
+    left: 400px;
 }
 
 .bottomScroll {
     position: absolute;
-    top: 59%;
-    left: 31%;
+    height: auto;
+    width: 600px;
+    top: 560px;
+    left: 400px;
 }
 
 .table {
