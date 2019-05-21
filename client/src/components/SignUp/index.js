@@ -7,6 +7,8 @@ import Footer from "../Footer";
 import topScroll from "./scrollTop.png";
 import midScroll from "./scrollMid.png";
 import bottomScroll from "./scrollBottom.png";
+import $ from "jquery";
+
 // import Table from "./table.jpg";
 
 class SignUp extends Component {
@@ -17,7 +19,6 @@ class SignUp extends Component {
             email: '',
             password: '',
             username: '',
-            confirmPassword: '',
             redirectTo: null
 
         }
@@ -32,10 +33,21 @@ class SignUp extends Component {
     }
 
     handleSubmit(event) {
+        var url = '';
+        var nextForm = '';
         event.preventDefault()
-
+        if($("#userRadio").is(":checked"))
+        {
+          url = '/api/user';
+          nextForm = '/findGuildUser';
+        } else if($("#storeRadio").is(":checked"))
+        {
+         url = '/api/store';
+         nextForm = '/findGuildStore';
+        }
         //request to server to add a new username/password
-        axios.post('/api/user', {
+        console.log(url);
+        axios.post(url, {
             username: this.state.username,
             email: this.state.email,
             password: this.state.password
@@ -45,7 +57,7 @@ class SignUp extends Component {
                 if (!response.data.errmsg) {
                     console.log('successful signup')
                     this.setState({ //redirect to login page
-                        redirectTo: '/findGuildUser'
+                        redirectTo: nextForm
                     })
                 } else {
                     console.log('username already taken')
@@ -95,11 +107,10 @@ class SignUp extends Component {
                             </form>
                         </div>
                     </div>
+                    <Footer />
                 </div>
-                <Footer />
-            </div>
-        );
-    }
+            );
+        }
     }
 }
 
