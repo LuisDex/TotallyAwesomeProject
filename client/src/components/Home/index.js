@@ -16,13 +16,6 @@ class Home extends Component {
                             <a href="/findGuildUser"><button className="btn wumboButton" >Enter</button></a>
                         </div>
                     </div>
-                    <div className="container">
-                        <div className="row">
-                            <div className="about col-md-12">
-                                <p className="aboutText">Finding a new guild can be hard sometimes. </p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <Footer />
             </div>
