@@ -21,6 +21,9 @@ class Header extends Component {
                             <li className="nav-item">
                                 <a className="nav-link link" href="/findGuildUser">Find a Guild</a>
                             </li>
+                            {/* <li className="nav-item">
+                                <a className="nav-link link" href="/results">Find a Store</a>
+                            </li> */}
                             <li className="nav-item">
                                 <a className="nav-link link" href="/login">Login</a>
                             </li>
