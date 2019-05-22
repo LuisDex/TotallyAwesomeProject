@@ -15,7 +15,7 @@ class FindGuildStore extends Component {
     constructor() {
         super()
         this.state = {
-            address: '',
+            location: '',
             hours: '',
             site: '',
             redirectTo:null
@@ -54,9 +54,9 @@ class FindGuildStore extends Component {
         });
         console.log(games);
         //request to server to add a new username/password
-        axios.post('api/store/' + sessionStorage.getItem("loggedAs"), {
+        axios.put('api/store/' + sessionStorage.getItem("loggedAs"), {
               games:games,
-              address:this.state.address,
+              location:this.state.location,
               hours:this.state.hours,
               site:this.state.site
         })
@@ -94,7 +94,7 @@ class FindGuildStore extends Component {
                             <form>
                                 <div className="form-group">
                                     <label htmlFor="input">Location (Store Address)</label>
-                                    <input type="text" className="form-control text input" placeholder="Address" name="address" value={this.state.address} onChange={this.handleChange}></input>
+                                    <input type="text" className="form-control text input" placeholder="Address" name="location" value={this.state.location} onChange={this.handleChange}></input>
                                 </div>
                                 <div className="form-row">
                                     <label htmlFor="input">Hours of Operation</label>

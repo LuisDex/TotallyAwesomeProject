@@ -1,0 +1,38 @@
+.user-card .user-header {
+    /* background: url("userheader.jpg"); */
+    background:blue;
+    background-size: cover;
+    height:200px;
+}
+
+.user-card .profile-pic {
+    position:relative;
+    top:-50px;
+    margin-bottom:-50px;
+}
+
+.user-card .profile-pic img {
+    width:100px;
+    height:100px;
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+    border:5px solid rgba(255,255,255,0.5);
+}
+
+.user-card {
+    background-color: lightblue;
+}
+.user-data {
+    padding:5%;
+}
+
+.user-info h2{
+    margin:0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.user-info h3{
+    font-size: 16px;
+}

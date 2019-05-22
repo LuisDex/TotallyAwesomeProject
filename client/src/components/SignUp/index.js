@@ -116,7 +116,7 @@ class SignUp extends Component {
                     </div>
                     <Footer />
                 </div>
-                </div>
+                
             );
         }
     }
