@@ -10,14 +10,14 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <img className="map" src={Map} />
-                <a href="/profile"><img className="capital" src={Capital} /></a>
+                <img className="map" alt="map" src={Map} />
+                <a href="/profile"><img className="capital" alt="capital" src={Capital} /></a>
                 <div className="profile">Profile</div>
-                <a href="/login"><img className="castle" src={Castle} /></a>
+                <a href="/login"><img className="castle" alt="castle" src={Castle} /></a>
                 <dic className="login">Login</dic>
-                <a href="/home"><img className="tower" src={Tower} /></a>
+                <a href="/home"><img className="tower" alt="tower" src={Tower} /></a>
                 <div className="home">Home</div>
-                <a href="/findGuildUser"><img className="guild" src={Guild} /></a>
+                <a href="/findGuildUser"><img className="guild" alt="guild" src={Guild} /></a>
                 <div className="findGuild">Find a Guild</div>
                 <div className="title">Welcome to AirD&amp;D</div>
             </div>

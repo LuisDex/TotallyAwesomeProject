@@ -37,7 +37,7 @@ class FindGuildUser extends Component {
           var hosting = true;
         } else if($("#notHosting").is(":checked"))
         {
-          var hosting = false;
+          hosting = false;
         }
 
         $.each($("input[name='game']:checked"), function(){            
@@ -75,10 +75,10 @@ class FindGuildUser extends Component {
                 <div className="wrapper">
                 <div className="container">
                 <div className="row">
-                    <img className="topScrollGuildUser" src={topScroll} />
-                    <img className="midScrollGuildUser" src={midScroll} />
-                    <img className="midScrollGuildUserJr" src={midScrollJr} />
-                    <img className="bottomScrollGuildUser" src={bottomScroll} />
+                    <img className="topScrollGuildUser" alt="topScroll" src={topScroll} />
+                    <img className="midScrollGuildUser" alt="midScroll" src={midScroll} />
+                    <img className="midScrollGuildUserJr" alt="midScroll2" src={midScrollJr} />
+                    <img className="bottomScrollGuildUser" alt="bottomScroll" src={bottomScroll} />
                     </div>
                     </div>
                     <div className="registerBackground">
