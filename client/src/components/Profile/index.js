@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./profile.css";
+import userPic from "./user.png";
 import axios from "axios";
 import $ from "jquery";
 
@@ -61,16 +62,16 @@ class Profile extends Component {
 
     render() {
         return (
-            // <div>
+            <div>
                 
-            // </div>
+          
             <div className="container">
         <div className="row">
             <div className="col-sm-6 offset-sm-3">
                 <div className="user-card text-center">
                     <div className="user-header"> </div>
                     <div className="profile-pic">
-                        <img id="pic" src="" alt=""></img>
+                        <img id="pic" src={userPic} alt="user"></img>
                     </div>
                     <div className="user-data">
                         <div className="user-info">
@@ -91,6 +92,7 @@ class Profile extends Component {
                 </div>
             </div>
         </div>
+    </div>
     </div>
         );
     }
