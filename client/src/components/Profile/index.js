@@ -8,10 +8,7 @@ class Profile extends Component {
 
      componentDidMount() 
     {
-    //   populateUser(this.getUserInfo());
     this.getUserInfo();
-    
-    // this.populateUser(userArray);
     }
 
     getUserInfo()
