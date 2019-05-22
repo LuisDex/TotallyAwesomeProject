@@ -26,19 +26,6 @@ class FindGuildStore extends Component {
         
     }
 
-    // fillForm(){
-    //     const hours = ["1","2","3","4","5","6","7","8","9","10","11","12"];
-    //     $('#hours1').empty();
-    //     $.each(hours, function(i, p) {
-    //     $('#hours1').append($('<option></option>').val(p).html(p));
-    //     $('#hours2').append($('<option></option>').val(p).html(p));
-    //     });
-    // }
-
-    // componentDidMount()
-    // {
-    //  this.fillForm();
-    // }
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value
@@ -98,12 +85,6 @@ class FindGuildStore extends Component {
                                 </div>
                                 <div className="form-row">
                                     <label htmlFor="input">Hours of Operation</label>
-                                    {/* <select class="form-control" id="hours1">
-                                    
-                                    </select>
-                                    <select class="form-control" id="hours2">
-                                    
-                                    </select> */}
                                     <input type="text" className="form-control text input" placeholder="Hours" name="hours" value={this.state.hours} onChange={this.handleChange}></input>
                                 </div>
                                 <div className="form-group">

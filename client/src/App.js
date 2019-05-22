@@ -7,6 +7,7 @@ import LoginPage from "./pages/login";
 import Register from "./pages/signup";
 import ResultsPage from "./pages/results";
 import ProfilePage from "./pages/profile";
+import AddEventPage from "./pages/addEvent";
 import FindGuildStorePage from "./pages/findGuildStore";
 import FindGuildUserPage from "./pages/findGuildUser";
 // import FindStorePage from "./pages/findStore";
@@ -58,6 +59,7 @@ class App extends Component {
             <Route exact path="/login" render={() => sessionStorage.getItem("loggedIn") === null ? (<LoginPage />) : (<Redirect to="/home" />)}/>
             <Route exact path="/register" render={() => sessionStorage.getItem("loggedIn") === null ? (<Register/>) : (<Redirect to="/home" />)}/>
             <Route exact path="/results" render={() => sessionStorage.getItem("loggedIn") != null ? (<ResultsPage/>) : (<Redirect to="/login" />)}/>
+            <Route exact path="/addEvent" render={() => sessionStorage.getItem("loggedIn") != null ? (<AddEventPage/>) : (<Redirect to="/login" />)} />
             <Route exact path="/profile" render={() => sessionStorage.getItem("loggedIn") != null ? (<ProfilePage/>) : (<Redirect to="/login" />)} />
             <Route exact path="/findGuild" render={() => sessionStorage.getItem("loggedIn") != null && sessionStorage.getItem("is_Store") === "yes" ? (<Redirect to="/findGuildStore"/>) : (<Redirect to="/findGuildUser" />)}/>
             <Route exact path="/findGuildStore" render={() => sessionStorage.getItem("loggedIn") != null ? (<FindGuildStorePage/>) : (<Redirect to="/login" />)}/>
