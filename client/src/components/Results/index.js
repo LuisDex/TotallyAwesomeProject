@@ -43,7 +43,7 @@ class ResultsPage extends Component {
     render() {
         return (
             <div>
-               <div className="container" id="eventSpace">
+               <div className="container card-deck" id="eventSpace">
 
                </div>
             </div>
