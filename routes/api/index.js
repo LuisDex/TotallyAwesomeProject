@@ -20,7 +20,8 @@ router.route("/login").post(
        console.log('logged in', req.user);
    
        var userInfo = {
-           email: req.user.email
+           email: req.user.email,
+           is_Store: req.user.is_Store
        };
    
        res.send(userInfo);

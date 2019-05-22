@@ -41,11 +41,11 @@ class Login extends Component {
             .then(response => {
                 if (response.status === 200) 
                 {
-                    console.log(response.data);
+
                     sessionStorage.setItem("loggedIn","true");
                     sessionStorage.setItem("loggedAs",response.data.email);
                     
-                    console.log(response.data.is_Store);
+                    sessionStorage.setItem("is_Store", response.data.is_Store);
                     console.log("Logged in");
                     console.log("Logged in as: " + sessionStorage.getItem("loggedAs"));
                  

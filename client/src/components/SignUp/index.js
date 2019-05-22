@@ -97,11 +97,11 @@ class SignUp extends Component {
                                     <input type="text" className="form-control username input" placeholder="And be clever" name="username" value={this.state.username} onChange={this.handleChange}></input>
                                 </div>
                                 <div className="form-check">
-                                    <input className="form-check-input" type="radio" value="user" checked />
-                                    <label className="form-check-label" for="user">I am a User</label>
+                                    <input className="form-check-input" type="radio" value="user" id="userRadio"/>
+                                    <label className="form-check-label" htmlFor="user">I am a User</label>
                                     <br />
-                                    <input className="form-check-input" type="radio" value="store" />
-                                    <label className="form-check-label" for="store">I am a Store</label>
+                                    <input className="form-check-input" type="radio" value="store" id ="storeRadio" />
+                                    <label className="form-check-label" htmlFor="store">I am a Store</label>
                                 </div>
                                 <button type="submit" className="btn loginSubmit" onClick={this.handleSubmit} >Submit</button>
                             </form>
@@ -109,9 +109,10 @@ class SignUp extends Component {
                     </div>
                     <Footer />
                 </div>
+                </div>
             );
         }
     }
 }
 
-export default SignUp
+export default SignUp;

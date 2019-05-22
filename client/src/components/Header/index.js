@@ -19,7 +19,7 @@ class Header extends Component {
                                 <a className="nav-link link" href="/profile">Profile</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link link" href="/findGuildUser">Find a Guild</a>
+                                <a className="nav-link link" href="/findGuild">Find a Guild</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link link" href="/login">Login</a>
