@@ -25,6 +25,9 @@ class Header extends Component {
                                 <a className="nav-link link" href="/results">Find Events</a>
                             </li>
                             <li className="nav-item">
+                                <a className="nav-link link" href="/addEvent">Add an Event</a>
+                            </li>
+                            <li className="nav-item">
                                 <a className="nav-link link" href="/login">Login</a>
                             </li>
                         </ul>
