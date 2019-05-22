@@ -78,6 +78,8 @@ class SignUp extends Component {
                 <Header />
                 <div className="wrapper">
                     <div className="registerBackground">
+                    <div className="container">
+                    <div className="row">
                         <img className="topScroll" src={topScroll} />
                         <img className="midScroll" src={midScroll} />
                         <img className="bottomScroll" src={bottomScroll} />
@@ -97,15 +99,20 @@ class SignUp extends Component {
                                     <input type="text" className="form-control username input" placeholder="And be clever" name="username" value={this.state.username} onChange={this.handleChange}></input>
                                 </div>
                                 <div className="form-check">
-                                    <input className="form-check-input" type="radio" value="user" id="userRadio"/>
-                                    <label className="form-check-label" htmlFor="user">I am a User</label>
+
+                                    <input className="form-check-input" type="radio" value="user" id="userRadio" />
+                                    <label className="form-check-label" for="user">I am a User</label>
                                     <br />
-                                    <input className="form-check-input" type="radio" value="store" id ="storeRadio" />
-                                    <label className="form-check-label" htmlFor="store">I am a Store</label>
+                                    <input className="form-check-input" type="radio" value="store" id="storeRadio" />
+                                    <label className="form-check-label" for="store">I am a Store</label>
+
                                 </div>
                                 <button type="submit" className="btn loginSubmit" onClick={this.handleSubmit} >Submit</button>
                             </form>
                         </div>
+                        </div>
+                        </div>
+                    </div>
                     </div>
                     <Footer />
                 </div>

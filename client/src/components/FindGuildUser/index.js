@@ -73,15 +73,21 @@ class FindGuildUser extends Component {
             <div className="bigContainer">
                 <Header />
                 <div className="wrapper">
+                <div className="container">
+                <div className="row">
                     <img className="topScrollGuildUser" src={topScroll} />
                     <img className="midScrollGuildUser" src={midScroll} />
                     <img className="midScrollGuildUserJr" src={midScrollJr} />
                     <img className="bottomScrollGuildUser" src={bottomScroll} />
+                    </div>
+                    </div>
                     <div className="registerBackground">
-                        <div className="findGuildFormUser">
+                    <div className="container">
+                    <div className="row">
+                        <div className="findGuildFormUser col-md-6">
                             <h1 className="findGuildTitle">Find a Guild</h1>
                             <form>
-                                <div className="form-group">
+                                <div className="form-group col-md-4">
                                     <label htmlFor="input">Location (Zip Code)</label>
                                     <input type="text" className="form-control zip input" placeholder="Zip" name="location" value={this.state.location} onChange={this.handleChange}></input>
                                 </div>
@@ -131,6 +137,8 @@ class FindGuildUser extends Component {
                                 <button type="submit" className="btn loginSubmit" onClick={this.handleSubmit} >Submit</button>
                             </form>
                         </div>
+                    </div>
+                    </div>
                     </div>
                 </div>
                 <Footer />

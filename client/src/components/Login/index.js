@@ -71,9 +71,11 @@ class Login extends Component {
             <Header />
                 <div className="wrapper">
                     <div className="background">
-                        <img className="loginScroll" src={Scroll} alt="scroll" />
+                    <div className="container">
+                    <div className="row">
+                        <img className="loginScroll col-md-9" src={Scroll} alt="scroll" />
                         <div className="form">
-                       <form>
+                       <form className="col-md-12">
                         <div className="form-group">
                             <label htmlFor="email"><i className="fas fa-dice-d20"></i>  Email Address</label>
                             <input type="email" className="form-control email input" placeholder="What is your email?" name="email" value={this.state.email} onChange={this.handleChange}></input>
@@ -87,6 +89,8 @@ class Login extends Component {
                     </form>
                         </div>
                     </div>
+                    </div>
+                </div>
                 </div>
                 <Footer />
             </div>
