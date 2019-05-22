@@ -78,6 +78,8 @@ class SignUp extends Component {
                 <Header />
                 <div className="wrapper">
                     <div className="registerBackground">
+                    <div className="container">
+                    <div className="row">
                         <img className="topScroll" src={topScroll} />
                         <img className="midScroll" src={midScroll} />
                         <img className="bottomScroll" src={bottomScroll} />
@@ -106,6 +108,9 @@ class SignUp extends Component {
                                 <button type="submit" className="btn loginSubmit" onClick={this.handleSubmit} >Submit</button>
                             </form>
                         </div>
+                        </div>
+                        </div>
+                    </div>
                     </div>
                     <Footer />
                 </div>
